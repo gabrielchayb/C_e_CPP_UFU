@@ -2,34 +2,35 @@
 using namespace std;
 
 
-vector<long long int>v, aux, novo;
+vector<long long int>v;
 
 int main()
 {
     
     int N,x;
     cin >> N; 
-    for (int i=0; i<N; i++){
+    for (int i=0; i<3; i++){
         cin >> x; 
         v.push_back(x);
-        aux.push_back(x);
+       
         
 
     } 
 
-    sort(aux.begin(),aux.end());
-    for (int i=0; i<N; i++){
-        if(v[i] != aux[i]){
-            novo.push_back(i);
+    sort(v.begin(), v.end());
+
+    int qtd=0; 
+
+    for (int i=0; i<v.size(); i++){
+        N -= v[i]; 
+
+        if (N>=0){
+            qtd++;
         }
 
     }
 
-    cout << novo.size() << endl; // 2
-    for(int i=0;i<novo.size()-1;i++){
-        cout << novo[i] << " ";// 1 
-    }
-    cout << novo[novo.size()-1] << endl; // 7 
+    cout << qtd << endl;
 
 
 

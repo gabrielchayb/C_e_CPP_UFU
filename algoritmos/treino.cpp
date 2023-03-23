@@ -3,34 +3,29 @@ using namespace std;
 
 int main(){
 
-    int A,B,R,P,S; 
-    R = 1;
-    P = 2; 
-    S = 3; 
-    cout << "Jogador 1 (digite 1 para R, 2 para P e 3 para S): ";
-    cin >> A; 
-    cout << "Jogador 2 (digite 1 para R, 2 para P e 3 para S): "; 
-    cin >> B; 
-    if(A == 1 && B==2){
-        cout << "jogador 2 venceu" << endl;
+    double a,b,c; 
+    cin >> a >> b >> c; 
+    double x,y; 
+    
+    if(a==0){
+        cout << "nao é uma equação do segundo grau" << endl;
     }
-    else if(A == 1 && B==3){
-        cout << "jogador 1 venceu" << endl;
+
+    double delta = (b*b) - 4*a*c; 
+    x = (-b + sqrt(delta)) / 2*a;
+    y = (-b - sqrt(delta)) / 2*a;
+
+    cout << "o delta vale: " << delta << endl; 
+    if (delta < 0){
+        cout << "nao existe solução para as raízes" << endl; 
     }
-    else if( A == 1 && B==1){
-        cout << "jogo empatado" << endl;
+    else if(delta == 0){
+        cout << "existe uma unica raiz: " <<  x  << endl;
     }
-    else if(A == 2 && B == 1){
-        cout << "Jogador 1 ganhou" << endl;
+    else if(delta > 0){
+        cout << "existem duas raizes" << y << " e " << x << endl;
     }
-    else if(A == 2 && B == 2){
-        cout << "Jogo empatado" << endl;
-    }
-    else if(A == 2 && B == 3){
-        cout << "Jogador 2 venceu" << endl;
-    }
-    else if(A == 3 && B == 3){
-        cout << "Jogao empatado" << endl;
-    }
+
+    
 
 }

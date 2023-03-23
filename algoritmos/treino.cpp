@@ -1,28 +1,38 @@
 #include <bits/stdc++.h> 
-using namespace std; 
+using namespace std;
 
-int main(){
 
-    int a,b,c; 
-    cin >> a >> b >> c; 
-    if(a >= b && b>=c){
-        cout << a << b << c; 
-    }
-    else if(a <= b && b<=c){
-        cout << c << b << a; 
-    }
-    else if(a>=b && b<=c){
-        cout << a << c << b; 
-    }
-    else if(a<=c && b>=c){
-        cout << b << c << a; 
-    }
-    else if (b>=a && a>=c){
-        cout << b << a << c; 
-    }
-    else if(c >=a && b<=a){
-        cout << c << a << b;
-    }
-    
+int main()
+{
+    int day;
+    cin >> day;
 
+    switch(day)
+    {
+        case 1:
+            cout <<"Domingo \n";
+            break;
+        case 2:
+            cout <<"Segunda \n";
+            break;
+        case 3:
+            cout <<"Terça \n";
+            break;
+        case 4:
+            cout <<"Quarta \n";
+            break;
+        case 5:
+            cout <<"Quinta \n";
+            break;
+        case 6:
+            cout <<"Sexta \n";
+            break;
+        case 7:
+            cout <<"Sábado \n";
+            break;
+        default:
+            cout <<"Dia inválido";
+    }
+
+    return 0;
 }

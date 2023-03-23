@@ -3,29 +3,26 @@ using namespace std;
 
 int main(){
 
-    double a,b,c; 
+    int a,b,c; 
     cin >> a >> b >> c; 
-    double x,y; 
-    
-    if(a==0){
-        cout << "nao é uma equação do segundo grau" << endl;
+    if(a >= b && b>=c){
+        cout << a << b << c; 
     }
-
-    double delta = (b*b) - 4*a*c; 
-    x = (-b + sqrt(delta)) / 2*a;
-    y = (-b - sqrt(delta)) / 2*a;
-
-    cout << "o delta vale: " << delta << endl; 
-    if (delta < 0){
-        cout << "nao existe solução para as raízes" << endl; 
+    else if(a <= b && b<=c){
+        cout << c << b << a; 
     }
-    else if(delta == 0){
-        cout << "existe uma unica raiz: " <<  x  << endl;
+    else if(a>=b && b<=c){
+        cout << a << c << b; 
     }
-    else if(delta > 0){
-        cout << "existem duas raizes" << y << " e " << x << endl;
+    else if(a<=c && b>=c){
+        cout << b << c << a; 
     }
-
+    else if (b>=a && a>=c){
+        cout << b << a << c; 
+    }
+    else if(c >=a && b<=a){
+        cout << c << a << b;
+    }
     
 
 }

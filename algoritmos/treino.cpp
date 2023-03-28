@@ -1,21 +1,9 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-int soma (int a, int b){
-    int s = a + b; 
-    return s;
-}
-
-
 int main(){
-    int a, b;
-    cin >> a >> b;
-    int x = soma (a,b);
-    if (x % 2 == 0){
-        cout << "Bino vence" << endl; 
-    }
-    else {
-        cout << "Cino vence" << endl; 
-    }
+    int x = 5; //crio uma var e coloco um numero
+    int *ptr = &x; //crio um ponteiro e atribuo o valor de memoria de x
 
+    cout << *ptr << endl; //printo o ponteiro - acessando a variável x indiretamente 
 }

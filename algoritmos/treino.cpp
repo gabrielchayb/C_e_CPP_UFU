@@ -4,10 +4,11 @@ using namespace std;
 
 int main(){
 	int n;
-    cin >> n;
-    do {
-        cin >> n; //execute esse bloco de código ate que a condição while seja satisfeita; 
-
-    } while(n!=2018);
-
+    for (int i = 0; i<6; i++){
+        if (i == 2){
+            continue; //continue = 0 1 3 4 5 
+                     // break = 0 1 
+        }
+    cout << i << endl;
+    }
 }

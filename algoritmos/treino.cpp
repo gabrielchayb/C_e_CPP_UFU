@@ -1,16 +1,21 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-int soma(int a, int b){
-        int s = a + b; 
-        return s;
+float menor(float a, float b){
+        if (a>=b){
+            return b;
+        } 
+        else {
+            return a;
+        }
     }
+
 
 
 int main(){
     int a,b;
     cin >> a >> b;
-	int x = soma (a,b); 
+	int x = menor (a,b); 
     cout << x << endl;
 
 }

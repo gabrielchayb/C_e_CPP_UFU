@@ -1,21 +1,21 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-float menor(float a, float b){
-        if (a>=b){
-            return b;
-        } 
-        else {
-            return a;
-        }
-    }
-
+int soma (int a, int b){
+    int s = a + b; 
+    return s;
+}
 
 
 int main(){
-    int a,b;
+    int a, b;
     cin >> a >> b;
-	int x = menor (a,b); 
-    cout << x << endl;
+    int x = soma (a,b);
+    if (x % 2 == 0){
+        cout << "Bino vence" << endl; 
+    }
+    else {
+        cout << "Cino vence" << endl; 
+    }
 
 }

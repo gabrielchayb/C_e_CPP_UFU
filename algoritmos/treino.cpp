@@ -3,11 +3,19 @@ using namespace std;
 
 
 int main(){
-	int X;
-    cin >> X;
-    for (int i = 0; i<X; i++){
-        cout << "NepsAcademy eh Sucesso" << endl; 
-    };
-    
+	int a,b, maior, menor;
+    cin >> a >> b;
+    if (a>=b){
+        menor = b;
+        maior = a;
+    }
+    else {
+        menor = a; 
+        maior = b; 
+    }
+    while(menor <= maior){
+        cout << menor << "" <<  endl; 
+        menor++;
+    }
 
 }

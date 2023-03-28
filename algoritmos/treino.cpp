@@ -1,13 +1,16 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
+int soma(int a, int b){
+        int s = a + b; 
+        return s;
+    }
+
 
 int main(){
-	int a, r;
-    cin >> a; 
-    for (int i = 0; i<=10; i++){
-        r = a * i; 
-        cout << a << "x" << i << "=" << r << endl;
-    }
+    int a,b;
+    cin >> a >> b;
+	int x = soma (a,b); 
+    cout << x << endl;
 
 }

@@ -14,11 +14,17 @@ int main(){
     // Removendo elementos do set, caso ele exista
     st.erase(1);
     st.erase(101010);
-    // Referência para o final do set
-    auto ptr = st.end();
-    // Movendo o ponteiro para acessar o maior elemento no set
-    ptr--;
-	cout << *ptr << endl;
+    // Apagando o set
+	st.clear();
+	// Como ele está vazio, seu tamanho, é zero
+	cout << st.size() << endl;
+    // Checando se o elemento 10 está no set
+    if(st.find(10) != st.end())
+        cout << "Existe" << endl;
+	else
+		cout << "Não existe" << endl;
+	return 0;
+
 
 
 

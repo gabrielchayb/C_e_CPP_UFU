@@ -1,11 +1,19 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-int main(){
-    int x = 5; //crio uma var e coloco um numero
-    int *ptr = &x; //crio um ponteiro e atribuo o valor de memoria de x
+//passagem de referência
 
-    cout << *ptr + 1 << endl; // printando o ponteiro com um novo valor de maneira dinâmica 
-    cout << *ptr + 2 << endl; // 
+int troca (int *a , int *b){ //peguei a variavel a e b e transformei em ponteiros. //apesar de serem var locais, eles acessam o local de memória por serem ponteiros 
+    int aux = *a; //criei uma aux que recebe o ptr de a 
+    *a = *b; //inverto o ptr a com b
+    *b = aux; //coloco b para aux 
+} 
+
+int main(){
+    int a = 1;
+    int b = 2; 
+    troca (&a,&b); //coloco o & pois estou imprimindo um ptr 
+    cout << a << b;
+
 
 }

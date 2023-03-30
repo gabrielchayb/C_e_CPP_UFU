@@ -36,6 +36,7 @@
   "C_Cpp_Runner.useAddressSanitizer": false,
   "C_Cpp.errorSquiggles": "enabled",
   "files.associations": {
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "iostream": "cpp"
   }
 }

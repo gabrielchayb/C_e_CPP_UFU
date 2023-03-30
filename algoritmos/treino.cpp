@@ -3,17 +3,19 @@ using namespace std;
 
 //passagem de referência
 
-int troca (int *a , int *b){ //peguei a variavel a e b e transformei em ponteiros. //apesar de serem var locais, eles acessam o local de memória por serem ponteiros 
-    int aux = *a; //criei uma aux que recebe o ptr de a 
-    *a = *b; //inverto o ptr a com b
-    *b = aux; //coloco b para aux 
-} 
+int f(int x){ // funcao fatorial
+    if(x == 0){ // caso base
+        return 1;
+    }
+    else{ // recursao
+        return x * f(x-1);
+    }
+}
 
 int main(){
-    int a = 1;
-    int b = 2; 
-    troca (&a,&b); //coloco o & pois estou imprimindo um ptr 
-    cout << a << b;
+    int N;
 
+    cin >> N;
 
+    cout << N << f(N) << endl;
 }

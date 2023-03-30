@@ -9,9 +9,10 @@ int main(){
 	mp.insert({'a', 1});
 	mp.insert({'b', 2});
 	mp.insert({'c', 3});
-    // Ponteiro para o primeiro elemento do map (auto)
-	// Considere que ptr igual à <chave, elemento>
-	auto ptr = mp.begin();
+    // Ponteiro para o final do map 
+	auto ptr = mp.end();
+    // Movendo para acessar o último elemento do map
+    ptr--;
     // Para acessar a chave usamos o first, e o elemento usamos o second
     cout << "Chave" << ptr->first << " Elemento: " << ptr->second << endl; 
 

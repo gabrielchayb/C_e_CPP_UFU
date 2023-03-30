@@ -14,9 +14,10 @@ int main(){
     // Removendo elementos do set, caso ele exista
     st.erase(1);
     st.erase(101010);
-    // Referência para o primeiro elemento do set, podemos usar o begin() para acessar o menor elemento do Set.
-    auto ptr = st.begin();
-	// O primeiro é o menor, logo será 1
+    // Referência para o final do set
+    auto ptr = st.end();
+    // Movendo o ponteiro para acessar o maior elemento no set
+    ptr--;
 	cout << *ptr << endl;
 
 

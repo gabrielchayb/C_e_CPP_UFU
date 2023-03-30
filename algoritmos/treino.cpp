@@ -1,18 +1,23 @@
-#include <bits/stdc++.h> 
+#include <iostream> 
+// Biblioteca com a implementação da pilha
+#include <stack>
+
+// Para evitar o uso do std::
 using namespace std;
 
-
 int main(){
-	// Declarando uma fila de inteiros
-	queue <int> q;	
-    // PUSH = Inserindo elementos no FINAL da fila
+	// Declarando uma pilha de inteiros
+	stack <int> q;	
+    // Inserindo elementos na pilha
 	q.push(1);
 	q.push(2);
-    // O front retorna o primeiro elemento (o mais antigo) da fila, nesse caso 1
-	cout << q.front() << endl;
-    // Removendo o elemento mais antigo, ou seja, o primeiro inserido na fila
+    //Removendo o elemento do topo da pilha
+	// O novo elemento do topo será o 1
 	q.pop();
-    // Imprimindo o tamanho da fila, neste caso será 2
+    // Tamanho da pilha 
 	cout << q.size() << endl;
+    // Retorna o topo da pilha, no caso, será 2
+	cout << q.top() << endl;
+    
 	return 0;
 }

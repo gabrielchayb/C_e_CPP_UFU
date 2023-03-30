@@ -1,19 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int gcd(int a, int b) // função de mdc
+int gcd(int a, int b)
 {
-	if (a > b) // se a for maior que b, troque a com b e prossiga 
-		swap(a, b);
+	if (b == 0) return a;
+	return gcd(b, a%b);
+}
 
-	if (a == 0) return b; //se a for 0, retorne b que será o mdc 
-	return gcd(a, b - a); //formula do mdc recursivamente 
+int lcm(int a, int b)
+{
+	int answer = a*b;
+	answer /= gcd(a, b);
+
+	return answer;
 }
 
 int main()
 {
 	int a, b;
-	cin >> a >> b; 
+	cin >> a >> b;
 
-	cout << "Maior divisor comum de " << a << " e " << b << ": " << gcd(a,b) << endl;
+	cout << "Mínimo múltiplo comum de " << a << " e " << b << ": " << lcm(a,b) << endl;
 }

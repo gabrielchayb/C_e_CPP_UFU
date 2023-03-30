@@ -1,23 +1,25 @@
-#include <iostream> 
-// Biblioteca com a implementação da pilha
-#include <stack>
+#include <iostream>
 
-// Para evitar o uso do std::
 using namespace std;
 
-int main(){
-	// Declarando uma pilha de inteiros
-	stack <int> q;	
-    // Inserindo elementos na pilha
-	q.push(1);
-	q.push(2);
-    //Removendo o elemento do topo da pilha
-	// O novo elemento do topo será o 1
-	q.pop();
-    // Tamanho da pilha 
-	cout << q.size() << endl;
-    // Retorna o topo da pilha, no caso, será 2
-	cout << q.top() << endl;
-    
-	return 0;
+int main() {
+	int x, cont = 1, vetor[10];
+	
+	for (int i=0; i<10; i++) {
+		cin >> vetor[i];
+	}
+	
+	cin >> x;
+	
+	for (int i=0; i<10; i++) {
+		if (vetor[i] == x) {
+			cout << "SIM";
+			cont = 0;
+			break;
+		}
+	}
+	
+	if (cont == 1) {
+		cout << "NAO";
+	}
 }

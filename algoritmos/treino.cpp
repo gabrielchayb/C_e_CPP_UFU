@@ -4,15 +4,29 @@ using namespace std;
 
 int main()
 {
-	int p;
-	cin >> p;
+	int q, n;
+	cin >> q >> n;
 
-	bool isPrime = true;
+	bool isPrime[n + 1]; // isPrime[i] = true se e somente se i for primo
 
-	for (int i = 2; i < p; i++)
-		if (p%i == 0) 
-			isPrime = false;
+	for (int i = 2; i <= n; i++) // Inicializa o vetor isPrime
+		isPrime[i] = true;
 
-	if (isPrime) cout << p << " é um número primo" << endl;
-	else cout << p << " não é um número primo" << endl;
+	for (int x = 2; x <= n; x++) // Itera pelo intervalo [2,n]
+	{
+		if (!isPrime[x]) // Checa se x é primo
+			continue;
+
+		for (int i = 2*x; i <= n; i += x) // Itera por todo múltiplo de x maior que ele e menor ou igual a n
+			isPrime[i] = false;
+	}
+
+	for (int i = 0; i < q; i++)
+	{
+		int v;
+		cin >> v;
+
+		if (isPrime[v]) cout << v << " é um número primo" << endl;
+		else cout << v << " não é um número primo" << endl;
+	}
 }

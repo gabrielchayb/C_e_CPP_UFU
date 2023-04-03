@@ -1,27 +1,20 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
 
+int main(void)
+{
+	// variáveis da entrada
+	int A, B, C;
 
+	cin >> A >> B >> C;
 
-int main (){
-    int a, b, c; 
-    cin >> a >> b >> c; 
-    if (a == b){
-        cout << c << endl;
-    }
-    else if (a == c){
-
-        cout << b << endl; 
-    }
-    else if (b == c){
-        cout << a << endl; 
-    }
-    else {
-        cout << "voce digitou um valor nao valido" << endl; 
-    }
-
-
-    
-
-    return 0;
+	if (A != B and A != C) // checamos se A ganhou
+		cout << "A\n";
+	else if (B != A and B != C) // checamos se B ganhou
+		cout << "B\n";
+	else if (C != A and C != B) // checamos se C ganhou
+		cout << "C\n";
+	else // ninguém ganhou
+		cout << "*\n";
 }

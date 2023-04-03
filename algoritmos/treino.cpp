@@ -4,11 +4,21 @@ using namespace std;
 
 
 int main (){
-    int matriz[2][2]; //declarei uma matriz inteira com 2 vetores e 2 elementos (i e j)
+    int a, b, c; 
+    cin >> a >> b >> c; 
+    if (a == b){
+        cout << c << endl;
+    }
+    else if (a == c){
 
-    cin >> matriz[0][1]; //vou ler a posição da primeira linha (i=0) na segunda coluna (i=1) 
-
-    cout << matriz << endl; // saida 0 x 0 0
+        cout << b << endl; 
+    }
+    else if (b == c){
+        cout << a << endl; 
+    }
+    else {
+        cout << "voce digitou um valor nao valido" << endl; 
+    }
 
 
     

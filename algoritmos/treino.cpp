@@ -2,19 +2,25 @@
 
 using namespace std;
 
-int main(void)
+int v[10010];
+
+int main()
 {
-	// variáveis da entrada
-	int A, B, C;
+	int x; //le o numero de numeros totais da sequencia que leremos
+    cin >> x; 
+    for (int i = 0; i < x; i++){ // i começa no zero, i fica igual a x 
+        cin >> v[i]; // preenche meu vetor na posição indice (i)
+    }
 
-	cin >> A >> B >> C;
+    int aux = 0; //aux = variavel contadora 
 
-	if (A != B and A != C) // checamos se A ganhou
-		cout << "A\n";
-	else if (B != A and B != C) // checamos se B ganhou
-		cout << "B\n";
-	else if (C != A and C != B) // checamos se C ganhou
-		cout << "C\n";
-	else // ninguém ganhou
-		cout << "*\n";
+    for (int i = 0; i < x - 2; i++){ // i começa no zero, i será a sequencia menos 2 ( entao tres ultimos numeros)
+        if(v[i]== 1 && v[i+1]== 0 && v[i+2] && 0){ // se a posicao i for 1, a sucessora 0 e a sucessora 0, adicione 1 na var contadora
+            aux++;
+        }
+    }
+
+    cout << aux << endl;
+
+
 }

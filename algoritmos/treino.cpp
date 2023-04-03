@@ -4,16 +4,14 @@ using namespace std;
 
 
 int main (){
+    int matriz[2][2]; //declarei uma matriz inteira com 2 vetores e 2 elementos (i e j)
 
-    int v[10]; //declarei meu array simples 
+    cin >> matriz[0][1]; //vou ler a posição da primeira linha (i=0) na segunda coluna (i=1) 
 
-    for(int i = 0; i <10; i++){ // i começa no zero e lê da posição 0 a 9 (10 valores)
-        cin >> v[i]; 
-    }
+    cout << matriz << endl; // saida 0 x 0 0
 
-    for (int i = 9; i>=0; i--){ // i começa na ultima posição (9) e lê descrescente (i--) até i < 0; 
-        cout << v[i] << endl;
-    }
+
+    
 
     return 0;
 }

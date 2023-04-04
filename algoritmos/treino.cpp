@@ -2,7 +2,7 @@
 
 using namespace std;
 
-
+vector<int>v;
 
 int main()
 {
@@ -10,11 +10,21 @@ int main()
     cin.tie(0);
     cout.tie(0);
 
-    int i1,i2,f1,f2;
-    cin >> i1 >> i2 >> f1 >> f2; //le tds os estados na lampada 
-    if(i1==f1 && i2==f2) cout << "0" << endl; 
-    else if(i1!=f1 && i2!=f2) cout << "1" << endl;
-    else if(i1!=f1 && i2==f2) cout << "1" << endl;
-    else cout << "2" << endl;
+    for(int i = 0; i < 3; i++){
+        cin >> v[i];
+    }
+
+    sort(v.begin(), v.end());
+
+    if(v[0] + v[1] < v[2]){
+        cout << "1" << endl; 
+    }
+    else if(v[0] + v[1] == v[2]){
+        cout << "2" << endl; 
+    }
+    {
+
+    }
+    
 }
 

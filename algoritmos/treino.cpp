@@ -5,9 +5,6 @@ typedef long long ll;
 vector<ll>v;
 
 int main(){
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
     ll N,x,total=1,i,maior=0;
     cin >> N;
     for(i=1;i<=N;i++){

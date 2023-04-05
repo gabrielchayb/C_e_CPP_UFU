@@ -2,22 +2,16 @@
 
 using namespace std;
 
-vector<int>v; 
-
-int main()
-{
-    int t1, t2, t3;
-    for (int i = 0; i < 3; i++){
-        cin >> v[i];
+int main(){
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    int a,b,c,menor=10000;
+    cin >> a >> b >> c;
+    for(int i=1;i<=3;i++){
+        if(i==1 && (b*2)+(c*4) < menor) menor = (b*2)+(c*4);
+        if(i==2 && (a*2)+(c*2) < menor) menor = (a*2)+(c*2);
+        if(i==3 && (a*4)+(b*2) < menor) menor = (a*4)+(b*2);
     }
-
-    sort(v.begin(), v.end());
-
-    t1 = v[0]; 
-    t2 = v[1]; 
-    t3 = v[2];
-
-
-    cout << t1 << t2 << t3 << endl;
+    cout << menor << endl;
 }
-

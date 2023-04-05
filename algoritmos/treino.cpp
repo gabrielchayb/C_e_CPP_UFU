@@ -2,25 +2,56 @@
 
 using namespace std;
 
-vector<int>v, pos;
+vector<int>v;  
+
 
 int main(){
-    int menor=1000,x,i; //variavel menor
-    for(i=0;i<10;i++){
-        cin >> x; //preenchi meu vetor
-        v.push_back(x); //joguei os valores de x no vetor
-        if(x < menor) menor = x; //descobre o menor valor "x" adicionado no vetor
+    int N, l, c, soma;
+    bool verificar = true; 
+    cin >> N; 
+    int m[N][N];
+    for (int i = 0; i < N; i++){ // LINHAS HORIZONTAIS
+        soma = 0; 
+        for (l = 0; l < N; l++){
+            cin >> m[l][c]; 
+            soma = soma + m[l][c];
+        }
+        v.push_back(soma);
+
+
     }
-    for(i=0;i<10;i++){ 
-        if(v[i]==menor){ //achei meus valores menores no v, 
-            pos.push_back(i); v[i] = -1; // troquei eles por -1
-        } 
+    l=0; c=0; soma=0;
+    while(true){ //linhas verticais
+        if(c==N) break;
+        soma += m[l][c];
+        if(c==N-1){
+            l=0;
+            c++;
+            v.push_back(soma);
+            soma=0;
+        }
+        else l++;
     }
-    cout << "Menor: " << menor << endl; //printa o menor valor do vetor v
-    cout << "Ocorrencias: "; 
-    for(i=0;i<pos.size()-1;i++) cout << pos[i] << " "; //indices que o menor valor apareceu (guarde no meu vetor auxiliar pos)
-    cout << pos[pos.size()-1] << endl;
-    for(i=0;i<v.size()-1;i++) cout << v[i] << " ";
-    cout << v[v.size()-1] << endl; // printa o vetor resultante
+    l=0; c=0; soma=0;
+    while(true){ //linha diagonal 1
+        if(l==N) break;
+        soma += m[l][c];
+        l++; c++;
+    } v.push_back(soma);
+    l=0; c=N-1; soma=0;
+    while(true){ //linha diagonal 2
+        if(l==N) break;
+        soma += m[l][c];
+        l++; c--;
+    } v.push_back(soma);
+
+    for(auto it:v){
+        if(it != soma){ verificar = false; break;}
+    }
+    if(verificar) cout << soma << endl;
+    else cout << "-1" << endl;
 }
+
+
+
     

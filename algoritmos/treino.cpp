@@ -1,57 +1,26 @@
 #include <bits/stdc++.h>
-
 using namespace std;
+typedef long long ll;
 
-vector<int>v;  
-
+vector<ll>v;
 
 int main(){
-    int N, l, c, soma;
-    bool verificar = true; 
-    cin >> N; 
-    int m[N][N];
-    for (int i = 0; i < N; i++){ // LINHAS HORIZONTAIS
-        soma = 0; 
-        for (l = 0; l < N; l++){
-            cin >> m[l][c]; 
-            soma = soma + m[l][c];
-        }
-        v.push_back(soma);
-
-
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    ll N,x,total=1,i,maior=0;
+    cin >> N;
+    for(i=1;i<=N;i++){
+        cin >> x;
+        v.push_back(x);
     }
-    l=0; c=0; soma=0;
-    while(true){ //linhas verticais
-        if(c==N) break;
-        soma += m[l][c];
-        if(c==N-1){
-            l=0;
-            c++;
-            v.push_back(soma);
-            soma=0;
-        }
-        else l++;
+    for(i=1;i<v.size()-1;i++){ //percorre todos menos pos 0 e pos final
+        if(v[i-1]<0 && v[i]<0) total *= v[i-1]*v[i]*v[v.size()-1];
+        else total *= v[i-1]*v[i]*v[i+1];
+        if(total > maior) maior = total;
+        total=1;
     }
-    l=0; c=0; soma=0;
-    while(true){ //linha diagonal 1
-        if(l==N) break;
-        soma += m[l][c];
-        l++; c++;
-    } v.push_back(soma);
-    l=0; c=N-1; soma=0;
-    while(true){ //linha diagonal 2
-        if(l==N) break;
-        soma += m[l][c];
-        l++; c--;
-    } v.push_back(soma);
-
-    for(auto it:v){
-        if(it != soma){ verificar = false; break;}
-    }
-    if(verificar) cout << soma << endl;
-    else cout << "-1" << endl;
+    cout << maior << endl;
 }
-
-
 
     

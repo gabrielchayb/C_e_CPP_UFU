@@ -2,22 +2,22 @@
 
 using namespace std;
 
+vector<int>v; 
+
 int main()
 {
-    int N, x, verificar, soma=0, pos;
-    cin >> N; //le a lista inteira
-    bool verificar = true; //verifica se a conidção é true
-
-    for (int i =0; i<=N; i++){
-        cin >> x; //le o valor
-        soma += x; //coloca o valor na soma e vai somando automatico
-        if (soma >= 1000000 && verificar){ //se a soma ultrapassar o premio 
-            pos = i; // guarde o indice desse momento em uma var pos 
-            verificar = false; 
-        }
+    int t1, t2, t3;
+    for (int i = 0; i < 3; i++){
+        cin >> v[i];
     }
 
-    cout << pos << endl; //printe o indice do momento em que a soma ultrapassou o premio
-    
+    sort(v.begin(), v.end());
+
+    t1 = v[0]; 
+    t2 = v[1]; 
+    t3 = v[2];
+
+
+    cout << t1 << t2 << t3 << endl;
 }
 

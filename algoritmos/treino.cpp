@@ -10,7 +10,7 @@ int main(){
     int v[N];
     for(int i = 0; i < N; i++){ 
         cin >> v[i];
-        soma = soma + v[i];
+        soma = soma + i / (v[i]);
     } 
      
     cout << soma << endl; 

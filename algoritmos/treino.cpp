@@ -2,38 +2,29 @@
 using namespace std;
 
 
+
 int main(){
-    int N, menor1, menor2; 
+    int N, m=0; 
     cin >> N; 
-    int v[N];
+    int v[N+1];
+    
     for (int i = 0; i < N; i++){
         cin >> v[i]; 
-        if( v[i] < menor1) { 
-            menor1 = v[i];
-        }
-
+        m += v[i];
     }
 
-    for(int i = 0; i<N; i++){
-        if (v[i] < menor2 && v[i] != menor1){
-            menor2 = v[i];
-        }
-    }
-
-    if (menor1 == menor2){
-        cout << menor1 << menor1 << endl; 
-    }
-
-    cout << menor1 <<endl;
-
-
-    
-    
-
-
+    double dp=0;
 
     
 
+    m = m/N;
+
+    for (int i = 0; i < N; ++i) {
+        dp+= pow(v[i] - m, 2);
+    }
+    dp= sqrt(dp / N);
+
+    cout << dp << endl;
 
 
 }

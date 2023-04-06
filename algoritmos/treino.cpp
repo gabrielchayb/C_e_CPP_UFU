@@ -4,16 +4,22 @@ using namespace std;
 
 
 int main(){
-    int soma = 0;
     int N; 
-    cin >> N;
+    cin >> N; 
     int v[N];
-    for(int i = 0; i < N; i++){ 
+    for (int i = 0; i < N; i++){
         cin >> v[i];
-        soma = soma + i / (v[i]);
-    } 
-     
-    cout << soma << endl; 
+    }
+    for (int i = 0; i < N; i++){
+        for (int j = 0; j < i; j++){
+            if (i > j){
+                v[i] == v[j];
+            }
+        }
+    }
+
+    cout << v[N] << endl; 
+
 
 
 }

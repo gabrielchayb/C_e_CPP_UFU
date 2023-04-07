@@ -1,25 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long int fastMultiplication(long long int x, long long int y, long long m)
+
+long long int fastMultiplication(long long int x, long long int y)
 {
-	if (x == 0) // Caso base
+	if (x == 0)
 		return 0;
 
-	long long int answer = fastMultiplication(x/2, y, m); // Acha a resposta do nosso subproblema
-	answer = (2*answer)%m; // Multiplica a nossa resposta por 2 e tira módulo m
+	long long int answer = fastMultiplication(x/2, y); 
+	answer = (2*answer); 
 
-	if (x%2 == 0) // Checa se x é par
+	if (x%2 == 0) 
 		return answer;
 
-	return (answer + y)%m;
+	return (answer + y);
 }
 
-int main()
+long long int fastExponentiation(long long int b, long long int e)
 {
-	long long int b, e, m;
-	cin >> b >> e >> m;
+	if (e == 0)
+		return 1;
 
-	cout << fastMultiplication(b, e, m) << endl;
+	long long int answer = fastExponentiation(b, e/2); 
+	answer = fastMultiplication(answer, answer); 
+
+	if (e%2 == 0) 
+		return answer;
+
+	return fastMultiplication(answer, b); 
 }
+
     

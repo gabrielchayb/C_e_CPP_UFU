@@ -1,33 +1,20 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-//busca gulosa
 
-int main(){
-    int V, N;
+const int MAXN = 20;
 
-    // Leia o número de moedas e o valor que queremos representar, respectivamente
-    cin >> N >> V;
+int main()
+{
+	int n;
+	int dp[MAXN]; // dp[i] = i-ésimo termo da sequência de Fibonacci
 
-    int S[N];
+	cin >> n;
 
-    // Ler todas as moedas
-    for (int i = 0; i < N; i++)
-    {
-        cin >> S[i];
-    }
+	dp[1] = dp[2] = 1; // Casos base
 
-    // Estratégia Gulosa
-    int moedas = 0;
-    for (int i = N - 1; i >= 0; i--) //percorro meu conjunto 
-    {
-        while (V >= S[i]) //enquanto meu valor for maior que as posições do meu conjunto
-        {
-            moedas += 1; //adicione mais um nas moedas
-            V -= S[i]; // e v = v - s[i]
-        }
-    }
+	for (int i = 3; i <= n; i++)
+		dp[i] = dp[i - 1] + dp[i - 2]; // Calculando dp[i]
 
-    cout << moedas << endl;
+	cout << "N-ésimo termo de Fibonacci: " << dp[n] << endl;
 }
-
     

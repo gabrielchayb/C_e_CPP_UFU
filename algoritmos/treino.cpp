@@ -1,62 +1,39 @@
-#include <iostream>
-#include <string>
-#include <iconv.h>
 #include<bits/stdc++.h>
-#include<locale>
 using namespace std;
 
-string convertAccentChars(const string& str) {
-    iconv_t cd = iconv_open("ASCII//TRANSLIT", "UTF-8");
+int v[NMAX];
+int aux[NMAX];
 
-    if (cd == (iconv_t)-1) {
-        cerr << "Erro ao abrir o conversor\n";
-        return str;
-    }
+void MERGE_SORT(int L, int R){
 
-    string out;
-    size_t inbytesleft = str.size();
-    char* inbuf = const_cast<char*>(str.c_str());
-    std::size_t outbytesleft = inbytesleft * 3;
-    char* outbuf = new char[outbytesleft];
-    char* outbufp = outbuf;
-
-    if (iconv(cd, &inbuf, &inbytesleft, &outbufp, &outbytesleft) == (size_t)-1) {
-        cerr << "Erro ao converter a string\n";
-        delete[] outbuf;
-        iconv_close(cd);
-        return str;
-    }
-
-    out.assign(outbuf, outbufp - outbuf);
-
-    delete[] outbuf;
-    iconv_close(cd);
-
-    return out;
-}
-
-int main() {
-    setlocale(LC_ALL, "pt_BR.UTF-8");
-    string str;
-    while(getline(cin,str)){
-    string out = convertAccentChars(str);
-    for (int aux=0; aux<out.size(); aux++){
-        if(out[aux]>='A'&& out[aux]<='Z' || out[aux]>='a'&& out[aux]<='z'){
-        if(out[aux]>='A'&& out[aux]<='Z')out[aux]=char(out[aux]+32);
-        }
-        else{
-            out.erase(aux,1);
-            aux--;
-        }
-    }
-    cout<<out<<endl;
-    string ajuda=out;
-    reverse(ajuda.begin(),ajuda.end());
-    if(ajuda==out)cout<<"sim\n";
-    else cout<<"nao\n";
-     
-}
-    return 0;
+	if(L == R) return;
+	int meio = (L + R)/2; //arredonda pra baixo
+	MERGE_SORT(L, meio);
+	MERGE_SORT(meio + 1, R);
+	int a;
+	int pos1 = L;
+	int pos2 = meio + 1;
+	for(a=L;a<=R;a++){
+	        //caso a pos1 ultrapasse o limite do primeiro
+	        //o aux vira o v de pos2, sendo o aux oq vai ordenar td
+	        if(pos1 == meio+1){
+	                aux[a] = v[pos2];
+	                pos2++;
+	        }
+		else if(pos2 == R+1){
+			aux[a] = v[pos1];
+			pos1++;}
+		//os dois if de baixo é a parte da ord em si
+		else if(v[pos1] <= v[pos2]){
+			aux[a] = v[pos1];
+			pos1++;}
+		else{
+			aux[a] = v[pos2];
+			pos2++;}
+	}
+	for(a=L;a<=R;a++){
+		v[a] = aux[a];
+	}
 }
 
     

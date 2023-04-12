@@ -4,12 +4,18 @@
 using namespace std;
 
 int main() {
-    vector<int> v = {9, 2, 7, 4, 6, 5, 3, 8, 1};
+    vector<int> v = {1, 2, 2, 4, 4, 4, 7, 8, 9, 9, 9};
 
-    // Encontra o maior elemento no range.
-    auto it = min_element(v.begin(), v.end());
-    int a=*it;
-    cout << "O menor elemento é: " << a << std::endl;
+    // Encontra o primeiro elemento maior do que 5.
+    int n;
+    cin>>n;
+    auto it = upper_bound(v.begin(), v.end(), n);
+
+    if (it != v.end()) {
+        cout << "O primeiro elemento maior do que " <<n <<" eh "<< *it << endl;
+    } else {
+        cout << "Não há elementos maiores do que "<< n  << endl;
+    }
 
     return 0;
 }

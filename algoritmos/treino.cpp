@@ -13,7 +13,7 @@ int search(int L, int R, int value) {
 	if(a[mid] == value)		// O valor foi encontrado
 		return mid;
 	
-	if(a[mid] < value) 		// Descarto o intervalo à esquerda
+	if(a[mid] > value) 		// Descarto o intervalo à esquerda
 		return search( mid + 1, R, value);
 	else					// Descarto o intervalo à direita
 		return search( L, mid - 1, value);
@@ -26,7 +26,7 @@ int main() {
     for(ll i=0; i<n; i++){
         cin>>a[i];
     }
-    sort(a, a+n); //ordena senao estiver ordenado
+    sort(a, a+n, greater<int>()); //ordena senao estiver ordenado
     int x;
     cin>>x; //valor desejado
     int i=search(0, n-1, x);

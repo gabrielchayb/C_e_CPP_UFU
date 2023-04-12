@@ -1,36 +1,36 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
+#define N 100000
+typedef long long int ll;
+ll a[N];
 
-const int MAXN = 1000010;
-
-int main()
-{
-	int n, q;
-	int v[MAXN], psa[MAXN];
-
-	cin >> n >> q;
-
-	for (int i = 0; i < n; i++)
-		cin >> v[i];
-
-	psa[0] = v[0];
-
-	for (int i = 1; i < n; i++)
-		psa[i] = psa[i - 1] + v[i];
-
-	for (int i = 0; i < q; i++) 
-	{
-		int L, R;
-		cin >> L >> R;
-
-        int sum;
-
-    	if (L == 0) 
-		    sum = psa[R]; // Versão mais fácil
-	    else 
-		    sum = psa[R] - psa[L - 1];
+int search(int L, int R, int value) {
+	int mid = (L + R) / 2; 	// Meio do intervalo
+	
+	if(L > R)				// Intervalo invalido
+		return -1;			// Valor não encontrado
+	
+	if(a[mid] == value)		// O valor foi encontrado
+		return mid;
+	
+	if(a[mid] < value) 		// Descarto o intervalo à esquerda
+		return search( mid + 1, R, value);
+	else					// Descarto o intervalo à direita
+		return search( L, mid - 1, value);
+}
 
 
-		cout << "Soma do intervalo: " << sum << endl;
-	}
+int main() {
+    ll n;
+    cin>>n;
+    for(ll i=0; i<n; i++){
+        cin>>a[i];
+    }
+    sort(a, a+n); //ordena senao estiver ordenado
+    int x;
+    cin>>x; //valor desejado
+    int i=search(0, n-1, x);
+    if(i!=-1)cout<<i<<endl; //vai printar indexado de 0 a n-1, se quiser de 1 a n, só somar +1
+    else cout<<"N tem esse valor no vetor\n";
+     
 }

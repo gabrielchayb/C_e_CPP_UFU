@@ -1,21 +1,36 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
 using namespace std;
 
-int main() {
-    vector<int> v = {1, 2, 2, 4, 4, 4, 7, 8, 9, 9, 9};
+const int MAXN = 1000010;
 
-    // Encontra o primeiro elemento maior do que 5.
-    int n;
-    cin>>n;
-    auto it = upper_bound(v.begin(), v.end(), n);
+int main()
+{
+	int n, q;
+	int v[MAXN], psa[MAXN];
 
-    if (it != v.end()) {
-        cout << "O primeiro elemento maior do que " <<n <<" eh "<< *it << endl;
-    } else {
-        cout << "Não há elementos maiores do que "<< n  << endl;
-    }
+	cin >> n >> q;
 
-    return 0;
+	for (int i = 0; i < n; i++)
+		cin >> v[i];
+
+	psa[0] = v[0];
+
+	for (int i = 1; i < n; i++)
+		psa[i] = psa[i - 1] + v[i];
+
+	for (int i = 0; i < q; i++) 
+	{
+		int L, R;
+		cin >> L >> R;
+
+        int sum;
+
+    	if (L == 0) 
+		    sum = psa[R]; // Versão mais fácil
+	    else 
+		    sum = psa[R] - psa[L - 1];
+
+
+		cout << "Soma do intervalo: " << sum << endl;
+	}
 }

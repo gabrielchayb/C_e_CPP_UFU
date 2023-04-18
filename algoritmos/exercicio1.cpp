@@ -1,28 +1,25 @@
 //gabriel ribeiro filice chayb. Nº Matrícula: 12221BSI233
 
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
- 
 
 int main(){
-    int N,x=1,A=0,B=1,R=0;
-    cin >> N;
-    while(x<N){
-	    if(x%2==1){
-		    cout << R << " ";
-            R = A + B;
-            A = R;
-        }
-        else if(x==2){
-            cout << R << " ";
-        }
-        else if(x%2==0){
-            cout << R << " ";
-            R = A+B;
-            B= R;
-        }
-        x++;
-    }
+    int v[10], N, cont=0, ver; 
+	while(cont < 10){
+		cin >> N;
+		ver = 1; 
+		for (int i = 0; i < cont; i++){
+			if(v[i] == N){
+				ver = 0;
+			}
+		}
+		if (ver){
+			v[cont] = N;
+			cont++;
+		}
 
-    cout << R << endl;
+	}
+	for (int i = 0; i < cont; i++){
+		cout << v[i] << "";
+	}
 }

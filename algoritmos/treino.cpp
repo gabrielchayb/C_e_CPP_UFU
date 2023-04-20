@@ -1,24 +1,21 @@
 #include<bits/stdc++.h>
-using namespace std; 
+using namespace std;
 
 int main(){
-    int N, qtd=0, x; 
-    cin >> N; 
-    while (cin >> N){
-        if(N % 2 != 0){
-            break;
-        }
-        if(N%2 == 0){
-            qtd++;
-        }
-        if( qtd==5){
-            cout << "preste atencao na msg" << endl;
-        }
-        while(N--){
-            cin >> x; 
-            if (x%2 == 0){cout<< "par" << endl;}
-            if (x%2 != 0){cout << "impar"<< endl;}
-        }
+  int v[10], qtd=0, soma=0; 
+  for (int i = 0; i < 10; i++){
+    cin >> v[i];
+    if(v[i] < 0){
+      qtd++;
     }
-    
+    else if(v[i] >= 0){
+      soma = soma + v[i];
+    }
+  }
+   
+    cout << qtd << endl; 
+    cout << soma << endl;
+
+
+
 }

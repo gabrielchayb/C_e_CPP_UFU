@@ -2,11 +2,23 @@
 using namespace std; 
 
 int main(){
-    int i; 
-    for(i = 0; i < 100000;){
-        cout << i << endl;
-        i = i + 1000;
-        
+    int N, qtd=0, x; 
+    cin >> N; 
+    while (cin >> N){
+        if(N % 2 != 0){
+            break;
+        }
+        if(N%2 == 0){
+            qtd++;
+        }
+        if( qtd==5){
+            cout << "preste atencao na msg" << endl;
+        }
+        while(N--){
+            cin >> x; 
+            if (x%2 == 0){cout<< "par" << endl;}
+            if (x%2 != 0){cout << "impar"<< endl;}
+        }
     }
     
 }

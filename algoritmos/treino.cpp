@@ -15,9 +15,7 @@ int main() {
         cin >> a[i].n1;
         cin >> a[i].n2;
         cin >> a[i].n3;
-        a[i].media = a[i].n1 + a[i].n2 + a[i].n3 / 3.0;
+        a[i].media = (a[i].n1 + a[i].n2 + a[i].n3) / 3.0;
+        cout << a[i].media << endl;
     }
-
-
-
 }

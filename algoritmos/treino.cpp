@@ -3,25 +3,21 @@ using namespace std;
 
 
 int main(){
-    int N, M; 
-    cin >> N >> M; 
-    int A[N][M]; 
-    int B[M][N];
-
-    for(int i = 0; i < N; i++){
-        for(int j = 0; j < M; j++){
-            cin >> A[i][j];
+    int m[8][8], soma;
+    for(int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j++){
+            cin >> m[i][j];
         }
     }
 
-    for(int i = 0; i < M; i++){
-        for(int j = 0; j < N; j++){
-            B[i][j] = A[j][i];
-            cout << B[i][j];
+    for(int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j++){
+            if(i == j){
+                soma = soma + m[i][j];
+            }
         }
     }
-
     
-
+    cout << soma << endl;
 
 }

@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "windows-gcc-x86",
+            "name": "windows-clang-x86",
             "includePath": [
                 "${workspaceFolder}/**"
             ],
@@ -10,10 +10,10 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:/MinGW/bin/g++.exe",
+            "compilerPath": "C:/MinGW/bin/cpp.exe",
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "windows-gcc-x86"
+            "intelliSenseMode": "windows-clang-x86"
         }
     ],
     "version": 4

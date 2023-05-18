@@ -9,29 +9,18 @@ struct ret{
 typedef struct ret ret;
 
 int main (){
-    pontos inf_dir, sup_dir, inf_esq, sup_esq;
+    pontos inf_dir, novo, sup_esq;
     scanf("%d %d", &sup_esq.x, &sup_esq.y);
     scanf("%d %d", &inf_dir.x, &inf_dir.y);
-    int DX = sup_esq.x - inf_dir.x;
-    int DY = sup_esq.y - inf_dir.y;
-    double diagonal = sqrt(DX*DX+DY*DY);
-    printf("Comprimento diagonal: %lf", diagonal);
-    int b,h;
-    for(i=1, i<=diagonal, i++){
-        for(j+1, j <=diagonal, j++){
-            if(i*i + j*j = diagonal*diagonal){
-                b = i;
-                h = j;
-                verifica = 1;
-                break;
-            }
-        }
-        if(verifica=1) break;
+    scanf("%d %d", &novo.x, &novo.y);
+    if(novo.x > sup_esq.x && novo.x < inf_dir.x && novo.y >= inf_dif.y && novo.y <= sup_esq.y){
+        printf("esta dentro");
+    }
+    else(){
+        printf("esta fora");
     }
 
-    printf("Area %d:", b*h);
-    printf("Perimetro %d:", b*2+h*2);
-    printf("Diagonal %d:", diagonal;)
+    
     
 
     

@@ -2,26 +2,13 @@
 #include <string.h>
 
 int main() {
-    char str[100];
-    int i, j;
-    int ehPalindromo = 1;
+    char M[20] = "Joao Paulo";
+    char N[20] = "Bento";
+    char R[20] = "Francisco";
 
-    printf("Digite uma palavra ou frase: ");
-    gets(str);
-
-    // Verificando se é um palíndromo
-    for (i = 0, j = strlen(str) - 1; i < j; i++, j--) {
-        if (str[i] != str[j]) {
-            ehPalindromo = 0;
-            break;
-        }
+    if(strcmp(M,N) == 1 && strcmp(M,R)== -1){
+         printf("%s %s %s", N, R, M);
     }
+    
 
-    if (ehPalindromo) {
-        printf("%s é um palíndromo.\n", str);
-    } else {
-        printf("%s não é um palíndromo.\n", str);
-    }
-
-    return 0;
 }

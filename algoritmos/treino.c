@@ -2,29 +2,39 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct ret{
-    int x, y;
+struct ponto{
+    int x,y;
+};
+typedef struct ponto ponto;
+
+struct poligono{
+    ponto v[100];
+    int qtd; //contar quantos pontos o poligono utiliza
 };
 
-typedef struct ret ret;
+typedef struct poligono poligono;
 
-int main (){
-    pontos inf_dir, novo, sup_esq;
-    scanf("%d %d", &sup_esq.x, &sup_esq.y);
-    scanf("%d %d", &inf_dir.x, &inf_dir.y);
-    scanf("%d %d", &novo.x, &novo.y);
-    if(novo.x > sup_esq.x && novo.x < inf_dir.x && novo.y >= inf_dif.y && novo.y <= sup_esq.y){
-        printf("esta dentro");
+
+
+int main(){
+    poligono triangulo,retangulo;
+    printf("Leitura Coordenadas Triangulo: ");
+    int i;
+    for(i=0;i<3;i++){ //leitura coordenadas: //{5,3} {1,1} {1,5} 
+        scanf("%d %d",&triangulo.v[i].x,&triangulo.v[i].y);
     }
-    else(){
-        printf("esta fora");
+    printf("\nLeitura Coordenadas Retangulo: ");
+    for(i=0;i<4;i++){ //leitura coordenadas: //{1,1} {1,3} {5,1} {5,3}
+        scanf("%d %d",&retangulo.v[i].x,&retangulo.v[i].y);
     }
-
+    printf("Coordenadas Triangulo: ");
+    for(i=0;i<3;i++){
+        printf("{%d,%d} ",triangulo.v[i].x,triangulo.v[i].y);
+    }
+    printf("\nCoordenadas Retangulo: ");
+    for(i=0;i<4;i++){
+        printf("{%d,%d} ",retangulo.v[i].x,retangulo.v[i].y);
+    }
     
-    
-
-    
-    
-
-
+    printf("\n");
 }

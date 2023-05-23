@@ -2,21 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 int main(){
-    while(1){
-        char str[100];
-        double valor;
-        printf("Mercadoria: ");
-        fgets(str,100, stdin); //string vai ficar com \n
-        int tam = strlen(str);
-        str[tam-1] = '\0';
-        if(strcmp(str,"sair")==0) break;
-        printf("Valor da Mercadoria: ");
-        scanf("%lf",&valor);
-        printf("Nome da Mercadoria: %s\nValor Total da Mercadoria: %.2lf R$\n",str,valor);
-        printf("Valor do Desconto: %.2lf R$\n",valor*0.1);
-        printf("Valor Pago a Vista: %.2lf R$\n",valor - valor*0.1);
-        setbuf(stdin,NULL);
-    }
+    char str[200],str2[200];
+    fgets(str,200,stdin);
+    int tam = strlen(str);
+    str[tam-1] = '\0';
+    int i,j,a,qtd=0;
+    scanf("%d %d", &i, &j);
+    if(i>=j){
+        for(a=i;a>=j;a--) str2[qtd++] = str[a];
+    }
+    else{
+        for(a=i;a<=j;a++) str2[qtd++] = str[a];
+    }
+    printf("%s\n",str2);
 }

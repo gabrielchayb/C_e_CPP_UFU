@@ -1,48 +1,73 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <bits/stdc++.h>
+using namespace std;
 
-//exercicio 10
 struct data{
-    int dia;
-    int mes;
-    int ano;
+    int dia, mes, ano;
 };
 
-typedef struct data data;
 
+typedef struct data data;
 int main(){
-    int verifica;
-    data d1,d2,aux;
-    int meses[13] = {0,31,28,31,30,31,30,31,31,30,31,30,31};
-    scanf("%d/%d/%d",&d1.dia,&d1.mes,&d1.ano); setbuf(stdin,NULL);
-    scanf("%d/%d/%d",&d2.dia,&d2.mes,&d2.ano);
-    //definir d1 como o menor possivel, caso n seja
-    if(d1.dia + d1.mes*100 + d1.ano*10000 > d2.dia + d2.mes*100 + d2.ano*10000){
-        aux = d1;
-        d1 = d2;
-        d2 = d1;
+    int m[13]={0,31,28,31,30,31,30,31,31,30,31,30,31}, contd=0, contm=0, conta=0;
+    data d1, d2, aux;
+    printf("insira a primeira data no formato 00/00/0000: ");
+    scanf("%d/%d/%d", &d1.dia, &d1.mes, &d1.ano);
+    printf("insira a segunda data no formato 00/00/0000: ");
+    scanf("%d/%d/%d", &d2.dia, &d2.mes, &d2.ano);
+    if(d1.ano!=d2.ano){
+        if(d1.ano>d2.ano){
+            aux=d1;
+            d1=d2;
+            d2=aux;
+        }
     }
-    //enquanto d1 n chegar na data d2 (ou seja, d1!=d2), incrementa 1 dia e vai contando
-    int total_dias=0;
-    while(d1.dia + d1.mes*100 + d1.ano*10000!=d2.dia + d2.mes*100 + d2.ano*10000){
-        total_dias++;
-        if( (d1.ano%4==0 && d1.ano%100!=0) || (d1.ano%400==0) ){
-            if(verifica==1){ //so pode passar uma vez para cada ano bissexto
-                verifica=0; 
-                total_dias++;
+    else{
+        if(d1.mes!=d2.mes){
+            if(d1.mes>d2.mes){
+            aux=d1;
+            d1=d2;
+            d2=aux;
             }
         }
-        if(d1.mes == 13){ //qnd ultrapassar limite meses 
-            d1.mes = 1;
-            d1.ano++;
-            verifica=1;
+        else{
+            if(d1.dia!=d2.dia){
+                if(d1.dia>d2.dia){
+                aux=d1;
+                d1=d2;
+                d2=aux;
+                }
+            }
         }
-        if(d1.dia == meses[d1.mes]+1){ //qnd ultrapassar limite dias
-            d1.dia = 1;
-            d1.mes++;
-        }
-        d1.dia++;
     }
-    printf("%d\n",total_dias);
+    aux=d1;
+    if(aux.dia==29 && aux.mes==2){
+        aux.dia--;
+        contd--;
+    }
+    if(d2.dia==29 && d2.mes==2){
+        d2.dia--;
+        contd++;
+    }
+    while(aux.dia!=d2.dia || aux.mes!=d2.mes || aux.ano!=d2.ano){
+          aux.dia++;
+          contd++;
+          if(aux.dia==28 && aux.mes==2 && aux.ano%4==0 && aux.ano%100!=0)contd++;
+          if(aux.dia>m[aux.mes]){
+              aux.dia=1;
+              aux.mes++;
+          }
+          if(aux.mes>12){
+              aux.dia=1;
+              aux.mes=1;
+              aux.ano++;
+          }
+          if(aux.dia==d1.dia && aux.mes!=d1.mes)contm++;
+          if(aux.dia==d1.dia && aux.mes==d1.mes && aux.ano!=d1.ano){
+              conta++;
+          }
+          
+    }
+    printf("total de dias de diferenca entre as datas: %d\n", contd);
+    printf("total de meses de diferenca entre as datas: %d\n", contm);
+    printf("total de anos de diferenca entre as datas: %d\n", conta);
 }

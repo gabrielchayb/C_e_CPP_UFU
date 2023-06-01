@@ -1,5 +1,6 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 //gabriel ribeiro filice chayb. nº matrícula: 12221BSI233
 
@@ -15,7 +16,5 @@ int main() {
         n++;
     }
 
-    cout << "O numero neperiano (e) eh: " << e << endl;
-
-    return 0;
+    printf("%lf",e);
 }

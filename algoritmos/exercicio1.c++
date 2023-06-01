@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//gabriel ribeiro filice chayb. nº matrícula: 1221BSI233
+//gabriel ribeiro filice chayb. nº matrícula: 12221BSI233
 
 
 int main() {

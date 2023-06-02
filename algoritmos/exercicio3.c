@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-//nome: gabriel ribeiro filice chayb Nº Matrícula: 12221BSI233
+// nome: gabriel ribeiro filice chayb nº matrícula: 12221BSI233
 
 struct ponto{
     int x,y;
@@ -10,37 +10,44 @@ struct ponto{
 typedef struct ponto ponto;
 
 struct poligono{
-    ponto coor;
-    ponto *proximo;
+    ponto VERTICES[100];
+    int QTDE;
 };
 typedef struct poligono poligono;
 
 int main(){
-    poligono triangulo[3],retangulo[4],pentagono[5];
-    triangulo[0].coor.x = 5;
-    triangulo[0].coor.y = 3;
-    triangulo[1].coor.x = 1;
-    triangulo[1].coor.y = 1;
-    triangulo[2].coor.x = 1;
-    triangulo[2].coor.y = 5;
-    
-    retangulo[0].coor.x = 1;
-    retangulo[0].coor.y = 1;
-    retangulo[1].coor.x = 1;
-    retangulo[1].coor.y = 3;
-    retangulo[2].coor.x = 5;
-    retangulo[2].coor.y = 1;
-    retangulo[3].coor.x = 5;
-    retangulo[3].coor.y = 3;
-
-    pentagono[0].coor.x = 2;
-    pentagono[0].coor.y = 1;
-    pentagono[1].coor.x = 4;
-    pentagono[1].coor.y = 1;
-    pentagono[2].coor.x = 5;
-    pentagono[2].coor.y = 3;
-    pentagono[3].coor.x = 3;
-    pentagono[3].coor.y = 5;
-    pentagono[4].coor.x = 1;
-    pentagono[4].coor.y = 3;
+    poligono triangulo,retangulo,pentagono;
+    int i;
+    triangulo.QTDE=0; retangulo.QTDE=0; pentagono.QTDE=0;
+    printf("Insira as coordenadas do Triangulo:\n");
+    for(i=0;i<3;i++){ 
+        scanf("%d %d",&triangulo.VERTICES[i].x,&triangulo.VERTICES[i].y);
+        triangulo.QTDE += 1;
+    }
+    printf("Insira as coordenadas do Retangulo:\n");
+    for(i=0;i<4;i++){ 
+        scanf("%d %d",&retangulo.VERTICES[i].x,&retangulo.VERTICES[i].y);
+        retangulo.QTDE += 1;
+    }
+    printf("Insira as coordenadas do Pentagono:\n");
+    for(i=0;i<5;i++){ 
+        scanf("%d %d",&pentagono.VERTICES[i].x,&pentagono.VERTICES[i].y);
+        pentagono.QTDE += 1;
+    }
+    printf("O numero de pontos efetivamente presentes no triangulo sao %d.",triangulo.QTDE);
+    printf("\nCoordenadas Triangulo: ");
+    for(i=0;i<3;i++){
+        printf("{%d,%d} ",triangulo.VERTICES[i].x,triangulo.VERTICES[i].y);
+    }
+    printf("\nO numero de pontos efetivamente presentes no retangulo sao %d.",retangulo.QTDE);
+    printf("\nCoordenadas Retangulo: ");
+    for(i=0;i<4;i++){
+        printf("{%d,%d} ",retangulo.VERTICES[i].x,retangulo.VERTICES[i].y);
+    }
+    printf("\nO numero de pontos efetivamente presentes no pentagono sao %d.",pentagono.QTDE);
+    printf("\nCoordenadas Pentagono: ");
+    for(i=0;i<5;i++){
+        printf("{%d,%d} ",pentagono.VERTICES[i].x,pentagono.VERTICES[i].y);
+    }
+    
 }

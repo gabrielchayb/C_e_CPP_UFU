@@ -1,45 +1,24 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#define INF 999999999
-
-//nome: gabriel ribeiro filice chayb Nº Matrícula: 12221BSI233
-
-struct aviao{
-    char aeronave[200];
-    int pot;
-    int np;
-    int carga;
-};
-
-typedef struct aviao aviao;
 
 int main(){
-    aviao v[10];
-    aviao aux;
-    int i,j;
-    char nome[200];
-    for(i=0;i<10;i++){
-        gets(v[i].aeronave);
-        setbuf(stdin,NULL);
-        scanf("%d %d %d",&v[i].pot, &v[i].np, &v[i].carga);
-        setbuf(stdin,NULL);
-    }
-    for(i=0;i<9;i++){
-        for(j=1;j<10;j++){
-            if(v[j].carga < v[i].carga){
-                aux = v[i];
-                v[i] = v[j];
-                v[j] = aux;
-            }
+    char str1[50];
+    gets(str1);
+    setbuf(stdin, NULL);
+    int N = strlen(str1); 
+    for(int i = 0; i < N; i++){
+        if(str1[i] >= "A" && str[i] <= "Z"){ //se ela for maiuscula ou tiver elementos maiusculas
+            str1[i]+= 32; // transforma td em minusculo pelo ASCII
         }
-    }
-    int menor = INF;
-    for(i=0;i<10;i++){
-        if(v[i].np < menor){
-            menor = v[i].np;
-            strcpy(nome,v[i].aeronave);
+        
+        if(str1[i] != " "){ //se for diferente de espaço
+             str1[i] += 3; // soma 3 como a criptografia de cesar
+             if(str1[i] > "z"){ // se o elemento ultrapassar z
+             str[i] -= 26; //tire 26 para voltar ao começo do alfabeto
         }
+        }
+
+        puts(str1);
+       
     }
-    printf("%s\n",nome);
+
 }

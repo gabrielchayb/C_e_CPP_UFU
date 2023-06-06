@@ -1,24 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 int main(){
-    char str1[50];
-    gets(str1);
-    setbuf(stdin, NULL);
-    int N = strlen(str1); 
-    for(int i = 0; i < N; i++){
-        if(str1[i] >= "A" && str[i] <= "Z"){ //se ela for maiuscula ou tiver elementos maiusculas
-            str1[i]+= 32; // transforma td em minusculo pelo ASCII
+    int v[6] = {2,4,6,8,10,12};
+    int qtd=0,encontrou=0,valor,meio;
+    scanf("%d",&valor);
+    int L = 0;
+    int R = 5;
+    while(L<=R){
+        meio = (L+R)/2;
+        if(v[meio]==valor){
+            printf("Encontrou %d na posicao %d\n",valor,meio);
+            encontrou = 1;
+            break;
         }
-        
-        if(str1[i] != " "){ //se for diferente de espaço
-             str1[i] += 3; // soma 3 como a criptografia de cesar
-             if(str1[i] > "z"){ // se o elemento ultrapassar z
-             str[i] -= 26; //tire 26 para voltar ao começo do alfabeto
-        }
-        }
-
-        puts(str1);
-       
+        else if(v[meio]<valor) L = meio+1;
+        else R = meio-1;
+        qtd++;
     }
-
+    printf("Numero de iteracoes: %d\n",qtd);
+    if(!encontrou){
+        printf("Valor nao foi encontrado\n");
+    }
 }

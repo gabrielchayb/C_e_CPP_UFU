@@ -8,7 +8,7 @@ int main(){
     int qtd=0,encontrou=0,valor,meio;
     scanf("%d",&valor);
     int L = 0;
-    int R = 5;
+    int R = 5; // ultima posicao do vetor
     while(L<=R){
         meio = (L+R)/2;
         if(v[meio]==valor){

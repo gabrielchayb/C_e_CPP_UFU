@@ -1,27 +1,24 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <math.h>
+#include <stdlib.h> 
 
 int main(){
-    int v[6] = {2,4,6,8,10,12};
-    int qtd=0,encontrou=0,valor,meio;
-    scanf("%d",&valor);
-    int L = 0;
-    int R = 5; // ultima posicao do vetor
-    while(L<=R){
-        meio = (L+R)/2;
-        if(v[meio]==valor){
-            printf("Encontrou %d na posicao %d\n",valor,meio);
-            encontrou = 1;
-            break;
-        }
-        else if(v[meio]<valor) L = meio+1;
-        else R = meio-1;
-        qtd++;
-    }
-    printf("Numero de iteracoes: %d\n",qtd);
-    if(!encontrou){
-        printf("Valor nao foi encontrado\n");
-    }
+    int idade;
+    char nome[10] = "Maria";
+    double peso, altura;
+    int casada;
+    float grau_miopia[1];
+    unsigned int tamanho_total;
+
+    altura = 1.65;
+    peso = 70; 
+    casada = 0; //false
+    grau_miopia[0] = 2.75; //olho esquerdo 
+    grau_miopia[1] = 3; // olho direito
+
+    tamanho_total = sizeof(nome) + sizeof(altura) + sizeof(peso) + sizeof(casada) + sizeof(grau_Miopia) \
+    + sizeof(idade) + sizeof(tamanho_total);
+
+    printf(tamanho_total);
+
+
 }

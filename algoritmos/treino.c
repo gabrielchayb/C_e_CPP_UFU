@@ -7,7 +7,7 @@ int main(){
     double peso, altura;
     int casada;
     float grau_miopia[1];
-    unsigned int tamanho_total;
+    int tamanho_total;
 
     altura = 1.65;
     peso = 70; 
@@ -15,10 +15,10 @@ int main(){
     grau_miopia[0] = 2.75; //olho esquerdo 
     grau_miopia[1] = 3; // olho direito
 
-    tamanho_total = sizeof(nome) + sizeof(altura) + sizeof(peso) + sizeof(casada) + sizeof(grau_Miopia) \
+    tamanho_total = sizeof(nome) + sizeof(altura) + sizeof(peso) + sizeof(casada) + sizeof(grau_miopia) \
     + sizeof(idade) + sizeof(tamanho_total);
 
-    printf(tamanho_total);
+    printf("%d", tamanho_total);
 
 
 }

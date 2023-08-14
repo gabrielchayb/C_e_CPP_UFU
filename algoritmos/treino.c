@@ -2,23 +2,23 @@
 #include <stdlib.h> 
 
 int main(){
-    int idade;
-    char nome[10] = "Maria";
-    double peso, altura;
-    int casada;
-    float grau_miopia[1];
-    int tamanho_total;
+    int N = 10; 
+    float M = 7.15; 
+    char B = 'B'; 
 
-    altura = 1.65;
-    peso = 70; 
-    casada = 0; //false
-    grau_miopia[0] = 2.75; //olho esquerdo 
-    grau_miopia[1] = 3; // olho direito
+    int *n = &N; 
+    float *m = &M; 
+    char *b = &B; 
 
-    tamanho_total = sizeof(nome) + sizeof(altura) + sizeof(peso) + sizeof(casada) + sizeof(grau_miopia) \
-    + sizeof(idade) + sizeof(tamanho_total);
+    *n = 20; 
+    *m = 15.30;
+    *b = 'L';
 
-    printf("%d", tamanho_total);
+    printf("novos valores:");
+    printf("int: %d\n", N);
+    printf("float: %f\n", M);
+    printf("char: %c\n", B);
 
-
+    return 0;
 }
+   

@@ -9,12 +9,13 @@ int main(){
     int x,y,dia,mes,ano,intensidade;
     int raios=0; //quantos raios cairam
     int total=400; //quadrantes que nao foram atingidos por raios
-    char *tempo; tempo = (char *) malloc(50);
-    int **m;
-    m = (int **) malloc(LARGURA*sizeof(int *));
+    char *tempo; tempo = (char *) malloc(50); // ponteiro tipo char (1 byte) com 50 espaços na memória alocados
+    int **m; // ponteiro que representa a matriz 
+    m = (int **) malloc(LARGURA*sizeof(int *)); // criou o m como int e alocou 20*qtd de bytes que int ocupa (size of(int *))
+    // int ** significa que é uma array bidimensional, ou seja, **
     for(int i=0;i<LARGURA;i++){
-        m[i] = (int *) malloc(COMPRIMENTO*sizeof(int));
-        for(int j=0;j<COMPRIMENTO;j++) *(*(m+i)+j) = 0;
+        m[i] = (int *) malloc(COMPRIMENTO*sizeof(int)); //posicao i da matriz (ou seja, a largura, linha i) recebe int * (uma dimensao) e aloca 20*qtd de bytes que int ocupa
+        for(int j=0;j<COMPRIMENTO;j++) m[i][j]= 0; // percorremos a posicao j da matriz , e zera o ponteiro que representa a posicao da matriz;
     }
     while(1){
         printf("Coordenadas: ");    
@@ -42,5 +43,5 @@ int main(){
             }
             printf("\n");
         } printf("\n");
-    }
+}
 }

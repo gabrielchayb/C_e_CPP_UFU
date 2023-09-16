@@ -7,8 +7,3 @@ int main() {
     scanf("%d", &N); 
     printf("%d", N);
 }
-
-
-
-
-NSAJKNBDJSKNASKL

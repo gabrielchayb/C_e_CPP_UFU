@@ -12,7 +12,10 @@ int main() {
 
     
     for(int i = 0; i < 5; i++){
-        printf("%d", *(p+i) * 2);  
+        if(*(p+i) % 2 == 0){
+            printf("%d \n", p);
+        }
+        
     }
 
 }

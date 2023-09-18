@@ -4,6 +4,8 @@
 
 int main() {
     int N;
-    scanf("%d", &N); 
-    printf("%d", N);
+    int *p; 
+    p = &N; 
+
+    scanf("%d")
 }

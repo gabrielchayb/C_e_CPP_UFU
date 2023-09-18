@@ -3,9 +3,14 @@
 #include <string.h>
 
 int main() {
-    int N;
-    int *p; 
-    p = &N; 
+    int M[3][3];
+    int *p;
 
-    scanf("%d")
+    for(int i = 0; i < 3; i++){
+        for (int j = 0; j < 3; j++){
+            scanf("%f", &M[i][j]);
+            p = &M[i][j];
+            printf("%d", p);
+        }
+    }
 }
